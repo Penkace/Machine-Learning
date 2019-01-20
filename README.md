@@ -1,5 +1,7 @@
 # Machine-Learning
+这个rep用于个人学习，自己在学习机器学习过程中遇到的问题会放在上面，自己对一些问题的看法以及不懂之处，有心的朋友可以指正!
 This repository is used to record problems I encountered while learning machine learning.  The problems mainly come from 'Machine Learning in Action'. Problems encountered during actual use.
+
 
 <br>
 
