@@ -7,6 +7,10 @@
            第一个问题，在JackCui以及《机器学习实战》中，对于文本内容切分的方法是 '\W*', r'\W*'. 这两种切分方法的意思是选择除了字母、数字和下划线以外
            的任何字符进行划分，并且使用量词 '*' 进行贪婪原则的匹配，即最大程度的选择。但是在实际的情况下却并非按照贪婪的原则，所以我重新编辑了函数。
            第二个问题，是关于结果的，留存交叉检验的结果是100%的错误率，个人并没有发现代码的逻辑错误
+	   
+	   解决问题：如果保留所有的长度的单词，会使得结果更加的精确，所以在textParse函数里面要返回的是去掉长度小于2的文本内容，甚至要求长度大于2的文本
+	   保留，这样的结果会使得分类的结果更加的准确，因为长度小于2的单词是用来分类的话更像是干扰项，所以可以去掉，独立性假设的重要性.
+	   另外，原函数在编写classify的时候返回错误，返回了p1和p2的概率，所以错误率是100%.
   
 '''
 
@@ -67,9 +71,9 @@ def classifyNB(vec2,p0V,p1V,pClass):
 	p0 = sum(vec2*p0V) + np.log(1.0 - pClass)
 	p1 = sum(vec2*p1V) + np.log(pClass)
 	if p1 > p0:
-		return p1
+		return 1
 	else:
-		return p0
+		return 0
 
 
 '''
@@ -77,7 +81,6 @@ def classifyNB(vec2,p0V,p1V,pClass):
 '''
 def textParse(bigString):
 	listOfTokens = re.split(r'\W',bigString) # 在没有使用量词 '*' 的情况下，可以划分出单词
-	
 	listOfTokens = [x for x in listOfTokens if x!='']  # 去掉列表中的空格或空字符
 	
 	list = []
@@ -85,7 +88,9 @@ def textParse(bigString):
 		if len(word)>=2:
 			word.lower()
 		list.append(word)
+
 	return list
+# 	return [word.lower() for word in listOfTokens if len(word)>2 ]
 
 '''
 测试朴素贝叶斯分类器
