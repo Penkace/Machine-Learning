@@ -1,9 +1,11 @@
 '''
-References: 《机器学习实战》第五章  以及  Jack Cui的知乎专栏：https://zhuanlan.zhihu.com/p/29073560    尊重原创，抵制抄袭
+------------------------------------------------------尊重原创，抵制抄袭----------------------------------------------------------------
+References: 《机器学习实战》第五章  以及  Jack Cui的知乎专栏：https://zhuanlan.zhihu.com/p/29073560    
 Problems: 在gradAscent1函数，即改进的随机梯度上升算法，这里根据自己的理解做了一些改动，主要是针对del(dataIndex[randIndex])的删除以及randIndex
           在函数中的引用，每次删除的是dataIndex中对应的randIndex值，在dataIndex中，样本的下标不断的删除，但是在实际的引用是引用randIndex，这样的
           结果是每次生成的随机数的范围在不断的缩小并且重复数字的频率增高，dataMatrix[randIndex]每次引用的样本也是一样的。
-          改进的随机梯度上升算法的初衷是尽量减少来回的波动以及加快收敛速度，所以采用随机选取样本的机制，减少周期性的波动。
+          改进的随机梯度上升算法的初衷是尽量减少来回的波动以及加快收敛速度，采用随机选取样本的机制，减少周期性的波动。我个人的理解是随机遍历所有
+	  样本，所以才改成dataMat[dataIndex[randIndex]]。但是书上以及博客都是使用dataMat[randIndex],希望朋友们能够指点迷津。
 '''
 
 import matplotlib.pyplot as plt
