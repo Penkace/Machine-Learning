@@ -4,19 +4,19 @@
 * Disadvantages: It's sensitive for input data.
 <br>
 ### The Principle of Naive Bayes
-* Conditional Probability: P(A|B) = P(AB)/P(B)
-                           P(AB) = P(A|B)*P(B) = P(B|A)*P(A)
+* Conditional Probability: <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;P(A|B) = P(AB)/P(B)<br>
+                           &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;P(AB) = P(A|B)*P(B) = P(B|A)*P(A)
                            
-* Total Probability Theorem: P(A) = P(A|B_1)*P(B_1) + P(A|B_2)*P(B_2) +...+ P(A|B_n)*P(B_n) 
-                             or P(A) = P(A*B_1) + P(A*B_2) +...+ P(A*B_n)
+* Total Probability Theorem: <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;P(A) = P(A|B_1)*P(B_1) + P(A|B_2)*P(B_2) +...+ P(A|B_n)*P(B_n) 
+                            <br> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;or P(A) = P(A*B_1) + P(A*B_2) +...+ P(A*B_n)
                              
-* BayesRule: P(A|B) = P(B|A)*P(A)/P(B)
-             P(B) = P(B*A_1) + P(B*A_2) +...+ P(B*A_n)
-             (we always call P(A|B) the posterior probability and call P(A) the prior probability.
+* BayesRule: <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;P(A|B) = P(B|A)*P(A)/P(B)
+             <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;P(B) = P(B*A_1) + P(B*A_2) +...+ P(B*A_n)
+             <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;(we always call P(A|B) the posterior probability and call P(A) the prior probability.
              In NavieBayes, P(A|B) is the maximum posterior probability)
        
 * Naive Bayes Basic Formula:
-             y = f(x) = arg max_(ck) P(Y = c_k)
+            <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; y = f(x) = arg max_(ck) P(Y = c_k)
              
 <br>
 ### Why we call Naive Bayes? What's meaning of the word "Naive"?
